@@ -80,7 +80,7 @@ export default function ExpenseForm({
     Object.entries(formdata).forEach(([key, value]) => {
       // console.log(key, value)
       validationConfig[key].some((rule) => {
-        console.log(rule)
+        // console.log(rule)
         if (rule.required && !value) {
           errorsData[key] = rule.message
           return true
