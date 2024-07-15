@@ -62,7 +62,7 @@ export default function ExpenseForm({
       },
     ],
   }
-  // console.log(edit)
+
   const validate = (formdata) => {
     const errorsData = {}
 
@@ -78,9 +78,7 @@ export default function ExpenseForm({
     //   errorsData.amount = 'Please enter amount'
     // }
     Object.entries(formdata).forEach(([key, value]) => {
-      // console.log(key, value)
       validationConfig[key].some((rule) => {
-        // console.log(rule)
         if (rule.required && !value) {
           errorsData[key] = rule.message
           return true
@@ -106,7 +104,6 @@ export default function ExpenseForm({
     e.preventDefault()
 
     const validateData = validate(expensevalue)
-    // console.log(validateData)
     if (Object.keys(validateData).length) {
       return
     }
